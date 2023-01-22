@@ -2,6 +2,7 @@ package com.itheima.mapper;
 
 import com.itheima.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.mapstruct.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author HeZhongYu
  * @since 2023-01-22
  */
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
 
 }
