@@ -1,18 +1,18 @@
 package com.itheima.mapper;
 
-import com.itheima.domain.User;
+import com.itheima.domain.ShoppingCart;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 
 /**
  * <p>
- * 用户信息 Mapper 接口
+ * 购物车 Mapper 接口
  * </p>
  *
  * @author HeZhongYu
  * @since 2023-01-22
  */
 
-public interface UserMapper extends BaseMapper<User> {
+public interface ShoppingCartMapper extends BaseMapper<ShoppingCart> {
 
 }
