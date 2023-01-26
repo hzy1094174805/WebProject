@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan(basePackages = "com.itheima.mapper")
 public class ReggieApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ReggieApplication.class, args);
+            SpringApplication.run(ReggieApplication.class, args);
     }
 }
 
