@@ -1,7 +1,9 @@
 package com.itheima.service;
 
-import com.itheima.domain.SetmealDish;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.itheima.domain.SetmealDish;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ISetmealDishService extends IService<SetmealDish> {
 
+    List<SetmealDish> getAll();
 }
