@@ -1,7 +1,7 @@
 package com.itheima.reggie.controller;
 
 
-import com.itheima.reggie.domain.User;
+import com.itheima.reggie.entity.User;
 import com.itheima.reggie.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

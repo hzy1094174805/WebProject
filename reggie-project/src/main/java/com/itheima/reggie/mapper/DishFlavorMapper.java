@@ -1,7 +1,7 @@
 package com.itheima.reggie.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.itheima.reggie.domain.DishFlavor;
+import com.itheima.reggie.entity.DishFlavor;
 
 /**
  * <p>

@@ -1,4 +1,4 @@
-package com.itheima.reggie.domain;
+package com.itheima.reggie.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,11 +10,12 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- * 菜品口味关系表
+ * 套餐
  * </p>
  *
  * @author HeZhongYu
@@ -23,9 +24,9 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("dish_flavor")
-@ApiModel(value="DishFlavor对象", description="菜品口味关系表")
-public class DishFlavor implements Serializable {
+@TableName("setmeal")
+@ApiModel(value="Setmeal对象", description="套餐")
+public class Setmeal implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,14 +34,26 @@ public class DishFlavor implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "菜品")
-    private Long dishId;
+    @ApiModelProperty(value = "菜品分类id")
+    private Long categoryId;
 
-    @ApiModelProperty(value = "口味名称")
+    @ApiModelProperty(value = "套餐名称")
     private String name;
 
-    @ApiModelProperty(value = "口味数据list")
-    private String value;
+    @ApiModelProperty(value = "套餐价格")
+    private BigDecimal price;
+
+    @ApiModelProperty(value = "状态 0:停用 1:启用")
+    private Integer status;
+
+    @ApiModelProperty(value = "编码")
+    private String code;
+
+    @ApiModelProperty(value = "描述信息")
+    private String description;
+
+    @ApiModelProperty(value = "图片")
+    private String image;
 
     @ApiModelProperty(value = "创建时间")
     private LocalDateTime createTime;

@@ -1,7 +1,7 @@
 package com.itheima.reggie.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.itheima.reggie.domain.SetmealDish;
+import com.itheima.reggie.entity.SetmealDish;
 import com.itheima.reggie.mapper.SetmealDishMapper;
 import com.itheima.reggie.service.ISetmealDishService;
 import org.springframework.beans.factory.annotation.Autowired;

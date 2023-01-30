@@ -1,4 +1,4 @@
-package com.itheima.reggie.domain;
+package com.itheima.reggie.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

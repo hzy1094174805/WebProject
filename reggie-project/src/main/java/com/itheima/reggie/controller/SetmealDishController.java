@@ -1,7 +1,7 @@
 package com.itheima.reggie.controller;
 
 
-import com.itheima.reggie.domain.SetmealDish;
+import com.itheima.reggie.entity.SetmealDish;
 import com.itheima.reggie.service.ISetmealDishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

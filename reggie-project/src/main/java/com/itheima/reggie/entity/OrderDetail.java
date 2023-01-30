@@ -1,4 +1,4 @@
-package com.itheima.reggie.domain;
+package com.itheima.reggie.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,11 +11,10 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 /**
  * <p>
- * 购物车
+ * 订单明细表
  * </p>
  *
  * @author HeZhongYu
@@ -24,9 +23,9 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("shopping_cart")
-@ApiModel(value="ShoppingCart对象", description="购物车")
-public class ShoppingCart implements Serializable {
+@TableName("order_detail")
+@ApiModel(value="OrderDetail对象", description="订单明细表")
+public class OrderDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,14 +33,14 @@ public class ShoppingCart implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "名称")
+    @ApiModelProperty(value = "名字")
     private String name;
 
     @ApiModelProperty(value = "图片")
     private String image;
 
-    @ApiModelProperty(value = "主键")
-    private Long userId;
+    @ApiModelProperty(value = "订单id")
+    private Long orderId;
 
     @ApiModelProperty(value = "菜品id")
     private Long dishId;
@@ -57,9 +56,6 @@ public class ShoppingCart implements Serializable {
 
     @ApiModelProperty(value = "金额")
     private BigDecimal amount;
-
-    @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createTime;
 
 
 }

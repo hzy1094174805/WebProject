@@ -1,4 +1,4 @@
-package com.itheima.reggie.domain;
+package com.itheima.reggie.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,12 +10,11 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- * 菜品管理
+ * 菜品及套餐分类
  * </p>
  *
  * @author HeZhongYu
@@ -24,9 +23,9 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("dish")
-@ApiModel(value="Dish对象", description="菜品管理")
-public class Dish implements Serializable {
+@TableName("category")
+@ApiModel(value="Category对象", description="菜品及套餐分类")
+public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,26 +33,11 @@ public class Dish implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(value = "菜品名称")
+    @ApiModelProperty(value = "类型   1 菜品分类 2 套餐分类")
+    private Integer type;
+
+    @ApiModelProperty(value = "分类名称")
     private String name;
-
-    @ApiModelProperty(value = "菜品分类id")
-    private Long categoryId;
-
-    @ApiModelProperty(value = "菜品价格")
-    private BigDecimal price;
-
-    @ApiModelProperty(value = "商品码")
-    private String code;
-
-    @ApiModelProperty(value = "图片")
-    private String image;
-
-    @ApiModelProperty(value = "描述信息")
-    private String description;
-
-    @ApiModelProperty(value = "0 停售 1 起售")
-    private Integer status;
 
     @ApiModelProperty(value = "顺序")
     private Integer sort;
@@ -69,9 +53,6 @@ public class Dish implements Serializable {
 
     @ApiModelProperty(value = "修改人")
     private Long updateUser;
-
-    @ApiModelProperty(value = "是否删除")
-    private Integer isDeleted;
 
 
 }

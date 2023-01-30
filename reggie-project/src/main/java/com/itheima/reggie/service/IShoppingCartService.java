@@ -1,7 +1,7 @@
 package com.itheima.reggie.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.itheima.reggie.domain.ShoppingCart;
+import com.itheima.reggie.entity.ShoppingCart;
 
 /**
  * <p>

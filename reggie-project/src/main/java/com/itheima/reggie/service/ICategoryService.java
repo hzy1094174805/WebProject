@@ -1,7 +1,7 @@
 package com.itheima.reggie.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.itheima.reggie.domain.Category;
+import com.itheima.reggie.entity.Category;
 
 /**
  * <p>
