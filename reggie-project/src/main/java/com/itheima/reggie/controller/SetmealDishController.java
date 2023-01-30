@@ -1,14 +1,8 @@
 package com.itheima.reggie.controller;
 
 
-import com.itheima.reggie.entity.SetmealDish;
-import com.itheima.reggie.service.ISetmealDishService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * <p>
@@ -22,11 +16,5 @@ import java.util.List;
 @RequestMapping("/setmeal-dish")
 public class SetmealDishController {
 
-    @Autowired
-    public ISetmealDishService setmealDishService;
 
-    @GetMapping
-    public List<SetmealDish> findAllSetmealDish() {
-        return setmealDishService.getAll();
-    }
 }

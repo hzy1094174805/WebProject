@@ -3,8 +3,6 @@ package com.itheima.reggie.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itheima.reggie.entity.User;
 
-import java.util.List;
-
 /**
  * <p>
  * 用户信息 服务类
@@ -15,7 +13,5 @@ import java.util.List;
  */
 
 public interface IUserService extends IService<User> {
-
-    List<User> getAll();
 
 }

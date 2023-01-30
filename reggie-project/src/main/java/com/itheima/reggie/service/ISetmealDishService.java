@@ -3,8 +3,6 @@ package com.itheima.reggie.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itheima.reggie.entity.SetmealDish;
 
-import java.util.List;
-
 /**
  * <p>
  * 套餐菜品关系 服务类
@@ -15,5 +13,4 @@ import java.util.List;
  */
 public interface ISetmealDishService extends IService<SetmealDish> {
 
-    List<SetmealDish> getAll();
 }

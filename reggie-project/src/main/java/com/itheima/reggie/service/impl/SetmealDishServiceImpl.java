@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.itheima.reggie.entity.SetmealDish;
 import com.itheima.reggie.mapper.SetmealDishMapper;
 import com.itheima.reggie.service.ISetmealDishService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * <p>
@@ -19,12 +16,5 @@ import java.util.List;
  */
 @Service
 public class SetmealDishServiceImpl extends ServiceImpl<SetmealDishMapper, SetmealDish> implements ISetmealDishService {
-    @Autowired
-    SetmealDishMapper setmealDishMapper;
 
-
-    @Override
-    public List<SetmealDish> getAll() {
-        return setmealDishMapper.selectList(null);
-    }
 }
