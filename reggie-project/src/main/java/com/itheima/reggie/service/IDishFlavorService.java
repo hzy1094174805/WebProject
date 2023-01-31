@@ -9,7 +9,7 @@ import com.itheima.reggie.entity.DishFlavor;
  * </p>
  *
  * @author HeZhongYu
- * @since 2023-01-22
+ * @since 2023-01-31
  */
 public interface IDishFlavorService extends IService<DishFlavor> {
 

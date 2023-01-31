@@ -9,7 +9,7 @@ import com.itheima.reggie.entity.SetmealDish;
  * </p>
  *
  * @author HeZhongYu
- * @since 2023-01-22
+ * @since 2023-01-31
  */
 public interface ISetmealDishService extends IService<SetmealDish> {
 

@@ -9,7 +9,7 @@ import com.itheima.reggie.entity.ShoppingCart;
  * </p>
  *
  * @author HeZhongYu
- * @since 2023-01-22
+ * @since 2023-01-31
  */
 public interface IShoppingCartService extends IService<ShoppingCart> {
 
