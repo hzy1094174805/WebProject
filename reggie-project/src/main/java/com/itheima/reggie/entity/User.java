@@ -18,19 +18,19 @@ import java.io.Serializable;
  * </p>
  *
  * @author HeZhongYu
- * @since 2023-01-22
+ * @since 2023-01-31
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("user")
-@ApiModel(value="User对象", description="用户信息")
+@ApiModel(value = "User对象", description = "用户信息")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "主键")
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.NONE)
     private Long id;
 
     @ApiModelProperty(value = "姓名")
