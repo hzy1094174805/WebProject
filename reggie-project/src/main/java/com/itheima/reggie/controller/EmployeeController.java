@@ -1,19 +1,76 @@
 package com.itheima.reggie.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.itheima.reggie.common.R;
+import com.itheima.reggie.entity.Employee;
+import com.itheima.reggie.service.IEmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
+ * 员工控制器
  * <p>
  * 员工信息 前端控制器
  * </p>
  *
  * @author HeZhongYu
+ * @date 2023/01/30
  * @since 2023-01-22
  */
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
 
+    /**
+     * 员工服务
+     */
+    @Autowired
+    private IEmployeeService employeeService;
+
+    /**
+     * 登录
+     *
+     * @param employee           员工
+     * @param httpServletRequest http servlet请求
+     * @return {@link R}<{@link Employee}>
+     */
+    @PostMapping("/login")
+    public R<Employee> login(@RequestBody Employee employee, HttpServletRequest httpServletRequest) {
+        LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<Employee> wrapper = queryWrapper.eq(Employee::getUsername, employee.getUsername());
+        Employee empForMysql = employeeService.getOne(wrapper);
+
+        if (empForMysql == null) {
+            return R.error("用户名不存在");
+        }
+        if (!empForMysql.getPassword().equals(DigestUtils.md5DigestAsHex(employee.getPassword().getBytes()))) {
+            return R.error("密码错误");
+        }
+        if (empForMysql.getStatus() == 0) {
+            return R.error("用户已被禁用");
+        }
+
+        httpServletRequest.getSession().setAttribute("employee", empForMysql);
+        return R.success(empForMysql);
+    }
+
+    /**
+     * 注销
+     *
+     * @param httpServletRequest http servlet请求
+     * @return {@link R}
+     */
+    @PostMapping("/logout")
+    public R logout(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getSession().invalidate();
+        return R.success("退出成功");
+    }
 }
+
