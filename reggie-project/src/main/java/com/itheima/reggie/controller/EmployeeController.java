@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.reggie.common.R;
 import com.itheima.reggie.entity.Employee;
 import com.itheima.reggie.service.IEmployeeService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
@@ -26,6 +27,7 @@ import java.time.LocalDateTime;
  */
 @RestController
 @RequestMapping("/employee")
+@Slf4j
 public class EmployeeController {
 
     /**
@@ -127,5 +129,43 @@ public class EmployeeController {
         employeeService.updateById(employee);
         return R.success("修改成功");
     }
+
+    /**
+     * 通过id
+     *
+     * @param eid eid
+     * @return {@link R}<{@link Employee}>
+     */
+    @GetMapping("/{id}")
+    public R<Employee> getById(@PathVariable("id") Long eid) {
+        log.info("根据id查询员工信息...");
+        Employee employee = employeeService.getById(eid);
+        if (employee != null) {
+            return R.success(employee);
+        }
+        return R.error("没有查询到对应员工信息");
+    }
+
+
+    /**
+     * 根据id修改员工信息
+     *
+     * @param employee
+     * @return
+     */
+    @PutMapping
+    public R<String> update(HttpServletRequest request, @RequestBody Employee employee) {
+        log.info(employee.toString());
+
+        Long empId = (Long) request.getSession().getAttribute("employee");
+
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(empId);
+        employeeService.updateById(employee);
+
+        return R.success("员工信息修改成功");
+    }
+
+
 }
 
