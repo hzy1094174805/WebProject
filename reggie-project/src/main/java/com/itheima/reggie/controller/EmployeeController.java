@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 
 /**
  * 员工控制器
@@ -71,6 +72,20 @@ public class EmployeeController {
     public R logout(HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().invalidate();
         return R.success("退出成功");
+    }
+
+    @PostMapping
+    public R save(@RequestBody Employee employee, HttpServletRequest httpServletRequest) {
+        employee.setCreateTime(LocalDateTime.now());
+        employee.setUpdateTime(LocalDateTime.now());
+        Employee empForSession = (Employee) httpServletRequest.getSession().getAttribute("employee");
+        employee.setCreateUser(empForSession.getId());
+        employee.setUpdateUser(empForSession.getId());
+        String md5DigestAsHex = DigestUtils.md5DigestAsHex("123456".getBytes());
+
+        employee.setPassword(md5DigestAsHex);
+        employeeService.save(employee);
+        return R.success("添加成功");
     }
 }
 
