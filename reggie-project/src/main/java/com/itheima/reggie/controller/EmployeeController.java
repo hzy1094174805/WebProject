@@ -110,5 +110,22 @@ public class EmployeeController {
         employeeService.page(pageInfo, queryWrapper);
         return R.success(pageInfo);
     }
+
+
+    /**
+     * 更新,禁用或启用三合一功能
+     *
+     * @param employee           员工
+     * @param httpServletRequest http servlet请求
+     * @return {@link R}
+     */
+    @PutMapping
+    public R update(@RequestBody Employee employee, HttpServletRequest httpServletRequest) {
+        Employee empForSession = (Employee) httpServletRequest.getSession().getAttribute("employee");
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(empForSession.getId());
+        employeeService.updateById(employee);
+        return R.success("修改成功");
+    }
 }
 
