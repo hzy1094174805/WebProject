@@ -84,13 +84,12 @@ public class EmployeeController {
      */
     @PostMapping
     public R save(@RequestBody Employee employee, HttpServletRequest httpServletRequest) {
-        employee.setCreateTime(LocalDateTime.now());
+        /*employee.setCreateTime(LocalDateTime.now());
         employee.setUpdateTime(LocalDateTime.now());
         Employee empForSession = (Employee) httpServletRequest.getSession().getAttribute("employee");
         employee.setCreateUser(empForSession.getId());
-        employee.setUpdateUser(empForSession.getId());
+        employee.setUpdateUser(empForSession.getId());*/
         String md5DigestAsHex = DigestUtils.md5DigestAsHex("123456".getBytes());
-
         employee.setPassword(md5DigestAsHex);
         employeeService.save(employee);
         return R.success("添加成功");
@@ -124,8 +123,8 @@ public class EmployeeController {
     @PutMapping
     public R update(@RequestBody Employee employee, HttpServletRequest httpServletRequest) {
         Employee empForSession = (Employee) httpServletRequest.getSession().getAttribute("employee");
-        employee.setUpdateTime(LocalDateTime.now());
-        employee.setUpdateUser(empForSession.getId());
+//        employee.setUpdateTime(LocalDateTime.now());
+//        employee.setUpdateUser(empForSession.getId());
         employeeService.updateById(employee);
         return R.success("修改成功");
     }
