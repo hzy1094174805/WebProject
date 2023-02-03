@@ -47,8 +47,10 @@ public class LoginCheckFilter implements Filter {
         Employee emp = (Employee) req.getSession().getAttribute("employee");
         if (emp != null) {
 //            说明已经登录过,要放行
+//            设置线程传递数据
             BaseContext.setUserId(emp.getId());
             chain.doFilter(req, resp);//controller metaObjectHandler
+//            删除线程传递数据
             BaseContext.remove();
             return;
         }
