@@ -1,9 +1,6 @@
 package com.itheima.reggie.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -47,20 +44,21 @@ public class Category implements Serializable {
     private Integer sort;
 
     @ApiModelProperty(value = "创建时间")
-    @TableField("create_time")
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @ApiModelProperty(value = "更新时间")
-    @TableField("update_time")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
     @ApiModelProperty(value = "创建人")
-    @TableField("create_user")
+    @TableField(fill = FieldFill.INSERT)
     private Long createUser;
 
     @ApiModelProperty(value = "修改人")
-    @TableField("update_user")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long updateUser;
+
 
 
 }
