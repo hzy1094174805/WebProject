@@ -24,13 +24,14 @@ import org.springframework.web.bind.annotation.*;
 public class CategoryController {
 
     /**
-     * 分类服务
+     * 目录服务
      */
     @Autowired
     private ICategoryService categoryService;
 
 
     /**
+     * 保存
      * 添加分类
      *
      * @param category 类别
@@ -42,6 +43,13 @@ public class CategoryController {
         return R.success(null);
     }
 
+    /**
+     * 页面
+     *
+     * @param page     页面
+     * @param pageSize 页面大小
+     * @return {@link R}<{@link Page}>
+     */
     @GetMapping("/page")
     public R<Page> page(Integer page, Integer pageSize) {
 //        设置排序条件
