@@ -1,8 +1,10 @@
 package com.itheima.reggie.filter;
 
 import com.alibaba.fastjson.JSON;
+import com.itheima.reggie.common.BaseContext;
 import com.itheima.reggie.common.R;
 import com.itheima.reggie.entity.Employee;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;
 
 import javax.servlet.*;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter(filterName = "LoginCheckFilter", urlPatterns = "/*")
+@Slf4j
 public class LoginCheckFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
@@ -19,8 +22,11 @@ public class LoginCheckFilter implements Filter {
     public void destroy() {
     }
 
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+        log.info("LoginCheckFilter类中此时的线程id为:{}", Thread.currentThread().getId());
+
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         String uri = req.getRequestURI();
@@ -41,7 +47,9 @@ public class LoginCheckFilter implements Filter {
         Employee emp = (Employee) req.getSession().getAttribute("employee");
         if (emp != null) {
 //            说明已经登录过,要放行
-            chain.doFilter(req, resp);
+            BaseContext.setUserId(emp.getId());
+            chain.doFilter(req, resp);//controller metaObjectHandler
+            BaseContext.remove();
             return;
         }
 

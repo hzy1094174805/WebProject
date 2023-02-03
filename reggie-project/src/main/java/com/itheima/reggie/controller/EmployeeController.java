@@ -122,6 +122,8 @@ public class EmployeeController {
      */
     @PutMapping
     public R update(@RequestBody Employee employee, HttpServletRequest httpServletRequest) {
+        log.info("EmployeeController类中此时的线程id为:{}", Thread.currentThread().getId());
+
         Employee empForSession = (Employee) httpServletRequest.getSession().getAttribute("employee");
 //        employee.setUpdateTime(LocalDateTime.now());
 //        employee.setUpdateUser(empForSession.getId());
