@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentProjectConfig">
+    <option name="cookieList">
+      <list>
+        <DataMapping>
+          <option name="type" value="http://localhost:80/" />
+          <option name="value" value="JSESSIONID=45CA25E449748F7E9CE544921CA31C1C; Path" />
+        </DataMapping>
+      </list>
+    </option>
+    <option name="dataList">
+      <list>
+        <NameGroup>
+          <option name="hostGroup">
+            <list>
+              <HostGroup>
+                <option name="env" value="dev" />
+                <option name="url" value="http://localhost" />
+              </HostGroup>
+            </list>
+          </option>
+          <option name="name" value="WebProject" />
+        </NameGroup>
+      </list>
+    </option>
+    <option name="domain" value="http://localhost" />
+    <option name="enableEnv" value="dev" />
+    <option name="enableProject" value="WebProject" />
+    <option name="envList">
+      <list>
+        <option value="dev" />
+      </list>
+    </option>
+    <option name="projectList">
+      <list>
+        <option value="WebProject" />
+      </list>
+    </option>
+  </component>
+</project>
