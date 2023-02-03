@@ -61,4 +61,26 @@ public class CategoryController {
         return R.success(pageInfo);
     }
 
+
+    /**
+     * 删除
+     * 删除分类
+     *
+     * @param id id
+     * @return {@link R}
+     */
+    @DeleteMapping
+    public R deleteById(Long id) {
+//        要删除套餐分类或者菜单分类 的时候，先查询一下该分类下是否有菜品或者套餐，如果有，就不能删除，并抛出异常
+        categoryService.removeById(id);
+        return R.success(null);
+    }
+
+    @PutMapping
+    public R update(@RequestBody Category category) {
+        categoryService.updateById(category);
+        return R.success(null);
+    }
+
+
 }

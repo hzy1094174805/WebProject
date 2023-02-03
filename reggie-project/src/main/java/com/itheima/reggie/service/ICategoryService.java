@@ -12,5 +12,5 @@ import com.itheima.reggie.entity.Category;
  * @since 2023-01-31
  */
 public interface ICategoryService extends IService<Category> {
-
+    void removeById(Long id);
 }
