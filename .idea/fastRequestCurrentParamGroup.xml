@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="fastRequestCurrentParamGroup">
-    <option name="bodyParamMap">
+    <option name="className" value="com.itheima.reggie.controller.CategoryController" />
+    <option name="method" value="page" />
+    <option name="methodDescription" value="页面" />
+    <option name="module" value="reggie-project" />
+    <option name="originUrl" value="/category/page" />
+    <option name="requestParamMap">
       <map>
-        <entry key="employee">
+        <entry key="page">
+          <value>
+            <Object />
+          </value>
+        </entry>
+        <entry key="pageSize">
           <value>
             <Object />
           </value>
         </entry>
       </map>
     </option>
-    <option name="className" value="com.itheima.reggie.controller.EmployeeController" />
-    <option name="method" value="login" />
-    <option name="methodDescription" value="登录" />
-    <option name="methodType" value="POST" />
-    <option name="module" value="reggie-project" />
-    <option name="originUrl" value="/employee/login" />
-    <option name="returnDocument" value="{&#10;&#9;&quot;code&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&quot;msg&quot;:&quot;No comment,Type =String&quot;,&#10;&#9;&quot;data&quot;:{&#10;&#9;&#9;&quot;id&quot;:&quot;主键&quot;,&#10;&#9;&#9;&quot;name&quot;:&quot;姓名&quot;,&#10;&#9;&#9;&quot;username&quot;:&quot;用户名&quot;,&#10;&#9;&#9;&quot;password&quot;:&quot;密码&quot;,&#10;&#9;&#9;&quot;phone&quot;:&quot;手机号&quot;,&#10;&#9;&#9;&quot;sex&quot;:&quot;性别&quot;,&#10;&#9;&#9;&quot;idNumber&quot;:&quot;身份证号&quot;,&#10;&#9;&#9;&quot;status&quot;:&quot;状态 0:禁用，1:正常&quot;,&#10;&#9;&#9;&quot;createTime&quot;:&quot;创建时间&quot;,&#10;&#9;&#9;&quot;updateTime&quot;:&quot;更新时间&quot;,&#10;&#9;&#9;&quot;createUser&quot;:&quot;创建人&quot;,&#10;&#9;&#9;&quot;updateUser&quot;:&quot;修改人&quot;&#10;&#9;}&#10;}" />
-    <option name="url" value="/employee/login" />
+    <option name="returnDocument" value="{&#10;&#9;&quot;code&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&quot;msg&quot;:&quot;No comment,Type =String&quot;,&#10;&#9;&quot;data&quot;:{&#10;&#9;&#9;&quot;records&quot;:[&#10;&#9;&#9;&#9;{}&#10;&#9;&#9;],&#10;&#9;&#9;&quot;total&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&#9;&quot;size&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&#9;&quot;current&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&#9;&quot;orders&quot;:[&#10;&#9;&#9;&#9;{&#10;&#9;&#9;&#9;&#9;&quot;column&quot;:&quot;No comment,Type =String&quot;,&#10;&#9;&#9;&#9;&#9;&quot;asc&quot;:&quot;No comment,Type =Boolean&quot;&#10;&#9;&#9;&#9;}&#10;&#9;&#9;],&#10;&#9;&#9;&quot;optimizeCountSql&quot;:&quot;No comment,Type =Boolean&quot;,&#10;&#9;&#9;&quot;searchCount&quot;:&quot;No comment,Type =Boolean&quot;,&#10;&#9;&#9;&quot;optimizeJoinOfCountSql&quot;:&quot;No comment,Type =Boolean&quot;,&#10;&#9;&#9;&quot;maxLimit&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&#9;&quot;countId&quot;:&quot;No comment,Type =String&quot;&#10;&#9;}&#10;}" />
+    <option name="url" value="/category/page" />
   </component>
 </project>
