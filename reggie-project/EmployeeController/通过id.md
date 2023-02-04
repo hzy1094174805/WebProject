@@ -57,7 +57,11 @@
 ##### Response example
 
 ```
-
+{
+  "code": 0,
+  "map": {},
+  "msg": "NOTLOGIN"
+}
 ```
 
 ##### Response document
