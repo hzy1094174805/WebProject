@@ -5,7 +5,19 @@
       <list>
         <DataMapping>
           <option name="type" value="http://localhost:80/" />
-          <option name="value" value="JSESSIONID=45CA25E449748F7E9CE544921CA31C1C; Path" />
+          <option name="value" value="JSESSIONID=AED0F51ADD97D5C9A106EA445FFCBC54; Path" />
+        </DataMapping>
+        <DataMapping>
+          <option name="type" value="http://localhost" />
+          <option name="value" value="JSESSIONID=AED0F51ADD97D5C9A106EA445FFCBC54; Path" />
+        </DataMapping>
+        <DataMapping>
+          <option name="type" value="http://localhost:80" />
+          <option name="value" value="JSESSIONID=AED0F51ADD97D5C9A106EA445FFCBC54; Path" />
+        </DataMapping>
+        <DataMapping>
+          <option name="type" value="localhost:80" />
+          <option name="value" value="JSESSIONID=8EB9B8EE06F02DCF9CFEC68BB9C3E89A; Path" />
         </DataMapping>
       </list>
     </option>
@@ -15,8 +27,8 @@
           <option name="hostGroup">
             <list>
               <HostGroup>
-                <option name="env" value="dev" />
-                <option name="url" value="http://localhost" />
+                <option name="env" value="local" />
+                <option name="url" value="localhost:80" />
               </HostGroup>
             </list>
           </option>
@@ -24,18 +36,28 @@
         </NameGroup>
       </list>
     </option>
-    <option name="domain" value="http://localhost" />
-    <option name="enableEnv" value="dev" />
+    <option name="domain" value="localhost:80" />
+    <option name="enableEnv" value="local" />
     <option name="enableProject" value="WebProject" />
     <option name="envList">
       <list>
-        <option value="dev" />
+        <option value="local" />
       </list>
     </option>
     <option name="projectList">
       <list>
         <option value="WebProject" />
       </list>
+    </option>
+    <option name="syncModel">
+      <GitSyncModel>
+        <option name="enabled" value="true" />
+        <option name="owner" value="hzy1094174805" />
+        <option name="repo" value="WebProject" />
+        <option name="repoUrl" value="https://github.com/hzy1094174805/WebProject.git" />
+        <option name="syncAfterRun" value="true" />
+        <option name="token" value="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" />
+      </GitSyncModel>
     </option>
   </component>
 </project>

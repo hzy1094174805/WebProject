@@ -9,6 +9,8 @@ import com.itheima.reggie.service.ICategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * 类别控制器
  * <p>
@@ -76,10 +78,25 @@ public class CategoryController {
         return R.success(null);
     }
 
+    /**
+     * 更新
+     *
+     * @param category 类别
+     * @return {@link R}
+     */
     @PutMapping
     public R update(@RequestBody Category category) {
         categoryService.updateById(category);
         return R.success(null);
+    }
+
+
+    @GetMapping("/list")
+    public R<List<Category>> list(Integer type) {
+        LambdaQueryWrapper<Category> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(Category::getType, type);
+        List<Category> list = categoryService.list(lambdaQueryWrapper);
+        return R.success(list);
     }
 
 
