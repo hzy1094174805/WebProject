@@ -1,9 +1,6 @@
 package com.itheima.reggie.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -68,7 +65,7 @@ public class ShoppingCart implements Serializable {
     private BigDecimal amount;
 
     @ApiModelProperty(value = "创建时间")
-    @TableField("create_time")
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
 
