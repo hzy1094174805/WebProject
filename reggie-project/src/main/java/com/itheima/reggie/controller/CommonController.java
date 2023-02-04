@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/common")
@@ -23,8 +24,11 @@ public class CommonController {
 
     @PostMapping("/upload")
     public R<String> upload(MultipartFile file) throws IOException {
-        file.transferTo(new File(baseUrl + file.getOriginalFilename()));
-        return R.success(file.getOriginalFilename());
+
+        String substring = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+        String filename = UUID.randomUUID().toString().replace("-", "")+substring;
+        file.transferTo(new File(baseUrl + filename));
+        return R.success(filename);
     }
 
     @GetMapping("/download")
@@ -39,5 +43,7 @@ public class CommonController {
             outputStream.flush();
         }
         fileInputStream.close();
+
+
     }
 }

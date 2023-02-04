@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
+//@Accessors(chain = true)
 @TableName("orders")
 @ApiModel(value = "Orders对象", description = "订单表")
 public class Orders implements Serializable {
